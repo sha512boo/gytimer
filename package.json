@@ -1,0 +1,13 @@
+{
+  "name": "gytimer",
+  "version": "1.0.0",
+  "description": "Corrected default settimeout",
+  "main": "index.js",
+  "keywords": [
+    "settimeout",
+    "js",
+    "fixed"
+  ],
+  "author": "sha512boo",
+  "license": "ISC"
+}
