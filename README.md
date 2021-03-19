@@ -10,29 +10,31 @@ When working in a project, I encountered incorrect work of the usual setTimeout 
 npm install gytimer
 
 ## Usage 
+```javascript
+const { setCustomTimeout, clearCustomTimeout, isCustomTimeoutExists } = require('gytimer') 
 
-`const { setCustomTimeout, clearCustomTimeout, isCustomTimeoutExists } = require('./gytimer')` 
+const firstTimeout = setCustomTimeout(() => {
+    console.log("This timeout wouldn't work!")
+}, 1000)
 
-`const firstTimeout = setCustomTimeout(() => {`
-    `console.log("This timeout wouldn't work!")`
-`}, 1000)`
+if (isCustomTimeoutExists(firstTimeout)) clearCustomTimeout(firstTimeout)
 
-`if (isCustomTimeoutExists(firstTimeout)) clearCustomTimeout(firstTimeout)`
-
-`setCustomTimeout(() => {`
-    `console.log("This timeout would work!")`
-`}, 1000)`
+setCustomTimeout(() => {
+    console.log("This timeout would work!")
+}, 1000)
 
 
-`let defaultTimeoutStart = Date.now()`
-`setTimeout(() => {`
+let defaultTimeoutStart = Date.now()
+setTimeout(() => {
     console.log(`Default timeout has worked for ${Date.now() - defaultTimeoutStart} ms (Condition: 1000 ms)`)
-}, 1000)`
+}, 1000)
 
-`let customTimeoutStart = Date.now()`
-`setCustomTimeout(() => {`
-    `console.log(`Custom timeout has worked for ${Date.now() - customTimeoutStart} ms (Condition: 1000 ms)`)`
-`}, 1000)` 
+let customTimeoutStart = Date.now()
+setCustomTimeout(() => {
+    console.log(`Custom timeout has worked for ${Date.now() - customTimeoutStart} ms (Condition: 1000 ms)`)
+}, 1000)
+
+```
 ## Credits
 sha512boo
 ## License
