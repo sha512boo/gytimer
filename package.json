@@ -1,6 +1,6 @@
 {
   "name": "gytimer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Corrected default settimeout",
   "main": "index.js",
   "keywords": [
@@ -9,5 +9,10 @@
     "fixed"
   ],
   "author": "sha512boo",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/sha512boo/gytimer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sha512boo/gytimer.git"
+  }
 }

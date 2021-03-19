@@ -7,7 +7,7 @@ When working in a project, I encountered incorrect work of the usual setTimeout 
 
 ## Installation
 
-npm install gytimer
+$ npm install gytimer
 
 ## Usage 
 
@@ -37,6 +37,6 @@ npm install gytimer
 sha512boo
 ## License
 ISC
-]]></content>
+</content>
     <tabTrigger>readme</tabTrigger>
 </snippet>
