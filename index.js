@@ -4,7 +4,7 @@ const timeoutEventPool = []
 
 module.exports = {
     setCustomTimeout: (func, duration = 0) => {
-        if (isNaN(duration)) duration = 0
+        if (isNaN(duration) || duration < 0) duration = 0
         let startTimeout = Date.now()
         let timeout = setInterval(() => {
             try {
