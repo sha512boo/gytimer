@@ -1,6 +1,6 @@
 {
   "name": "gytimer",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Corrected default settimeout",
   "main": "index.js",
   "keywords": [

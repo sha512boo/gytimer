@@ -1,6 +1,6 @@
 
 <snippet>
-    <content><![CDATA[
+<content><![CDATA[
 # ${1:gytimer}
 
 When working in a project, I encountered incorrect work of the usual setTimeout timeout function, so I decided to write a custom function.
@@ -26,12 +26,12 @@ setCustomTimeout(() => {
 
 let defaultTimeoutStart = Date.now()
 setTimeout(() => {
-    console.log(`Default timeout has worked for ${Date.now() - defaultTimeoutStart} ms (Condition: 1000 ms)`)
+    console.log(`Default timeout has worked for ${Date.now() - defaultTimeoutStart} ms (Condition: 1000 ms)`) // Custom timeout has worked for 1012 ms (Condition: 1000 ms)
 }, 1000)
 
 let customTimeoutStart = Date.now()
 setCustomTimeout(() => {
-    console.log(`Custom timeout has worked for ${Date.now() - customTimeoutStart} ms (Condition: 1000 ms)`)
+    console.log(`Custom timeout has worked for ${Date.now() - customTimeoutStart} ms (Condition: 1000 ms)`) // Default timeout has worked for 1064 ms (Condition: 1000 ms) + has worked correctly
 }, 1000)
 
 ```
@@ -40,5 +40,4 @@ sha512boo
 ## License
 ISC
 </content>
-    <tabTrigger>readme</tabTrigger>
 </snippet>
