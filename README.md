@@ -11,7 +11,7 @@ $ npm install gytimer
 
 ## Usage 
 ```javascript
-const { setCustomTimeout, clearCustomTimeout, isCustomTimeoutExists } = require('gytimer') 
+const { setCustomTimeout, clearCustomTimeout, isCustomTimeoutExists, sleep } = require('gytimer') 
 
 const firstTimeout = setCustomTimeout(() => {
     console.log("This timeout wouldn't work!")
@@ -34,6 +34,19 @@ setCustomTimeout(() => {
     console.log(`Custom timeout has worked for ${Date.now() - customTimeoutStart} ms (Condition: 1000 ms)`) // Custom timeout has worked for 1012 ms (Condition: 1000 ms) + has worked correctly
 }, 1000)
 
+
+
+async function testSleep (duration) {
+    let sleepStart = Date.now()
+    console.log("Sleep started")
+    for (let key in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+        await sleep(duration)
+        console.log(key)
+    }
+    console.log(`Log after sleep has sent (${Date.now() - sleepStart})`) // 20050ms
+}
+
+testSleep(2000)
 ```
 ## Credits
 sha512boo
