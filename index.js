@@ -12,6 +12,7 @@ function setCustomTimeout (func, duration = 0) {
                 clearInterval(timeout)
             }
         } catch (err) {
+            clearCustomTimeout(timeout)
             console.log(err)
         }
     })
