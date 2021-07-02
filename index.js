@@ -5,25 +5,26 @@ const timeoutEventPool = []
 function setCustomTimeout (func, duration = 0) {
     if (isNaN(duration) || duration < 0) duration = 0
     let startTimeout = Date.now()
-    let timeout = setInterval(() => {
+    let timeout = {}
+    timeout.id = getGeneratedTimeoutID()
+    timeout.interval = setInterval(() => {
         try {
             if (Date.now() >= startTimeout + duration) {
                 func()
-                clearInterval(timeout)
+                clearCustomTimeout(timeout)
             }
         } catch (err) {
             clearCustomTimeout(timeout)
-            console.log(err)
+            console.log(err, `timeout id: ${timeout.id}`)
         }
     })
-    timeout.id = getGeneratedTimeoutID()
     timeoutEventPool.push(timeout)
     return timeout
 } 
 function clearCustomTimeout (object) {
     let timeout = getTimeoutByID(object.id)
     if (timeout) {
-        clearInterval(timeout)
+        clearInterval(timeout.inverval)
         timeoutEventPool.splice(timeoutEventPool.indexOf(timeout), 1)
     }
 }
